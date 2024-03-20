@@ -141,8 +141,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalInput: 0
+  speed: 10
   xRange: 10
   projectilePrefab: {fileID: 1108636658}
+  projectileSpawnPoint: {fileID: 710939202}
+  zMin: -1.5
+  zMax: 15.5
+  verticalInput: 0
+--- !u!54 &149967665
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149967661}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &149967666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149967661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +548,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &710939201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710939202}
+  m_Layer: 0
+  m_Name: FoodSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &710939202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710939201}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &859177176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -503,6 +587,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5536986930871026247, guid: 1a9dac4d484321142af6b0509fd6eff1, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1108636658}
     - target: {fileID: 8650532431774700342, guid: 1a9dac4d484321142af6b0509fd6eff1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.86
@@ -638,6 +726,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4723893625334156069, guid: 8c21ee0be478186499230770c3c4d2fb, type: 3}
+      propertyPath: animalPrefab
+      value: 
+      objectReference: {fileID: 8722454515562233853, guid: 1a9dac4d484321142af6b0509fd6eff1, type: 3}
+    - target: {fileID: 4723893625334156069, guid: 8c21ee0be478186499230770c3c4d2fb, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1108636658}
     - target: {fileID: 8303956714760027760, guid: 8c21ee0be478186499230770c3c4d2fb, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -662,6 +758,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
@@ -711,6 +811,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 149967662}
+    - targetCorrespondingSourceObject: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 149967666}
+    - targetCorrespondingSourceObject: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 149967665}
   m_SourcePrefab: {fileID: 100100000, guid: 7b6675de545141649953fd8adec4561b, type: 3}
 --- !u!850595691 &1579443345
 LightingSettings:
@@ -867,6 +973,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2652527263890610129, guid: da0ec3e642fa0ae45879a0d11889ae4e, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1108636658}
     - target: {fileID: 1087709582239537100, guid: da0ec3e642fa0ae45879a0d11889ae4e, type: 3}
       propertyPath: m_Name
       value: Animal_Cow_White
@@ -924,6 +1034,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2757567004866852312, guid: a6d83142e6787cf468141e5dfb61a6a9, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1108636658}
     - target: {fileID: 792663904407278473, guid: a6d83142e6787cf468141e5dfb61a6a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.49
@@ -1006,6 +1120,9 @@ MonoBehaviour:
   - {fileID: 8722454515562233853, guid: 1a9dac4d484321142af6b0509fd6eff1, type: 3}
   - {fileID: 1087709582239537100, guid: da0ec3e642fa0ae45879a0d11889ae4e, type: 3}
   - {fileID: 5110626962273406853, guid: a6d83142e6787cf468141e5dfb61a6a9, type: 3}
+  sideSpawnMinZ: 3
+  sideSpawnMaxZ: 15
+  sideSpawnX: 20
 --- !u!4 &2135693647
 Transform:
   m_ObjectHideFlags: 0
@@ -1029,6 +1146,7 @@ SceneRoots:
   - {fileID: 170076735}
   - {fileID: 992285706}
   - {fileID: 2135693647}
+  - {fileID: 710939202}
   - {fileID: 1325115418}
   - {fileID: 1092060660}
   - {fileID: 859177176}
